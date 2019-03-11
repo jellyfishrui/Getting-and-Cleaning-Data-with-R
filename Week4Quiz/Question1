@@ -1,0 +1,38 @@
+. Question 1
+
+The American Community Survey distributes downloadable data about United States communities. Download the 2006 microdata survey about housing for the state of Idaho using download.file() from here:
+
+https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06hid.csv
+
+and load the data into R. The code book, describing the variable names is here:
+
+https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FPUMSDataDict06.pdf
+
+Apply strsplit() to split all the names of the data frame on the characters "wgtp". What is the value of the 123 element of the resulting list?
+
+1) "wgt" "15"
+
+2) "wgtp" "15"
+
+3) "" "15"
+Correct 
+
+4) "wgtp"
+
+
+
+Solution:
+
+#Apply strsplit() to split all the names of the data frame on the characters "wgtp".
+#What is the value of the 123 element of the resulting list?
+
+library(data.table)
+
+setwd("E:/DataScience/Coursera/Getting_and_Cleaning_Data/week4/Quiz")
+download.file("https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06hid.csv", 
+              destfile = "acs2006.csv", method = "curl")
+acs2006 <- data.table ::fread("acs2006.csv")
+
+namesplit <- strsplit(names(acs2006), "wgtp")
+
+namesplit[[123]]
