@@ -20,6 +20,23 @@ Correct
 4) 381615.4
 
 
+
+
+3. Question 3
+
+In the data set from Question 2 what is a regular expression that would allow you to count the number of countries whose name begins with "United"? Assume that the variable with the country names in it is named countryNames. How many countries begin with United?
+
+1) grep("United$",countryNames), 3
+
+2) grep("^United",countryNames), 3
+Correct 
+
+3) grep("*United",countryNames), 5
+
+4) grep("*United",countryNames), 2
+
+
+
 Solution:
 
 #Remove the commas from the GDP numbers in millions of dollars and average them. 
